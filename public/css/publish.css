@@ -1,0 +1,38 @@
+.blog_public {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blog_public .text {
+    display: inline-block;
+    padding: 2px 5px;
+    width: 720px;
+    height: 30px;
+    border: 1px solid #C1C1BB;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+
+.textarea {
+    width: 800px;
+    height: 400px;
+    padding: 5px 5px;
+    border: 1px solid #C1C1BB;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    resize: none;
+}
+
+.blog_public .btn {
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    margin-left: 720px;
+}
+
+.home {
+    width: 800px;
+    margin: 20px auto;
+    margin-bottom: 0px;
+}

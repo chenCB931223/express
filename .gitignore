@@ -1,0 +1,5 @@
+# My configurations:
+node_modules
+*.log
+*.jpg
+!icon.jpg
