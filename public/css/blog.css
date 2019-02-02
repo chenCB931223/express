@@ -1,0 +1,88 @@
+.content {
+    width: 900px;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+.content a {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.content a:hover {
+    text-decoration: underline;
+    color: #e2e2e2;
+}
+
+.article {
+    width: 900px;
+    margin: 0 auto;
+    padding: 6px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.article p {
+    text-align: left;
+}
+
+.comment_box {
+    width: 900px;
+    margin: 50px auto;
+    text-align: right;
+}
+
+.comment_box .comment {
+    width: 890px;
+    height: 100px;
+    resize: none;
+    padding: 5px;
+}
+
+.comment_box .warn {
+    text-align: left;
+    color: rgba(255, 0, 0, 0.87);
+}
+
+.comment_box .btn {
+    width: 80px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.comment_box .btn:hover {
+    background: rgb(66, 197, 197);
+}
+
+.comment_list {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.comment_list li {
+    padding: 15px 15px;
+    border-bottom: 1px solid #000;
+}
+
+.comment_date {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.575);
+    margin-top: 10px;
+}
+
+.comment_like {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.comment_like a {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: url('/images/favorite.png') no-repeat 0 0;
+    margin-bottom: -2px;
+}
+
+.like_box {
+    float: right;
+}

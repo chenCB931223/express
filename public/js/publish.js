@@ -13,6 +13,7 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (result) {
+                console.log(result);
                 window.location.href = '/acticle/?id=' + result._id;
                 alert('成功');
             },

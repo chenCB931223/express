@@ -35,7 +35,25 @@
     </div>
 
     <script src="/js/jquery.js"></script>
+    <script src="/js/template.js"></script>
     <script src="/js/index.js"></script>
+
+    <script id="test" type="text/html">
+        {{each list  value i}}
+        <li>
+            <h2><a href="/acticle/?id={{value._id}}" id="{{value._id}}">{{value.title}}</a></h2>
+            <div class="article_info">
+                <p>{{value.content}}</p>
+            </div>
+            <p class="date">{{value.date}}</p>
+            <div class="comment_like">
+                   <a href="javascript:;" class="like_icon"></a>
+                    <span id="like_number">{{value.like}}</span>
+            </div>
+            
+        </li>
+        {{/each}}
+    </script>
 </body>
 
 </html>

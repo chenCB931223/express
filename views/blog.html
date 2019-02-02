@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{list.title}}</title>
+    <link rel="stylesheet" href="/css/rest.css">
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+
+<body>
+    <div class="content">
+        <a href="/">返回首页</a>
+        <a href="/publish">写博客</a>
+        <a href="/" id="remove">删除博客</a>
+    </div>
+    <div class="article">
+        <h1 data-id={{list._id}}>{{list.title}}</h1>
+        <p>{{list.content}}</p>
+    </div>
+
+    <div class="comment_box">
+        <textarea id="comment" class="comment" cols="30" rows="10"></textarea>
+        <p id="warn" class="warn"></p>
+        <button type="button" class="btn" id="comment_btn">评论</button>
+    </div>
+    <div class="comment_like">
+        <div class="like_box">
+            <a href="javascript:;" class="like_icon"></a>
+            <span id="like_number">{{list.like}}</span>
+        </div>
+    </div>
+    <ul id="comment_list" class="comment_list">
+        {{each comment value i}}
+        <li>
+            <p class="comment_content">{{value.text}}</p>
+            <p class="comment_date">{{value.date}}</p>
+        </li>
+        {{/each}}
+    </ul>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/blog.js"></script>
+
+</body>
+
+</html>
