@@ -1,7 +1,6 @@
 var db = require('./db');
 var express = require('express');
 var router = express.Router();
-var url = require('url');
 
 router.post('/api/publish', function (req, res) {
     var title = req.body.title;
@@ -19,35 +18,33 @@ router.post('/api/publish', function (req, res) {
 
         return blog.save();
     }).then((doc) => {
-        res.json(doc);
+        res.json(doc)
         return doc;
     }).catch((err) => {
         console.error(err);
     })
 })
 
-router.get(/\/acticle/, function (req, res) {
+/* router.get(/\/acticle/, function (req, res) {
     var newUrl = url.parse(req.url, true);
     var id = newUrl.query.id;
-    console.log(id);
-    db.findById({ _id: id }).then((doc) => {
+
+    db.findOne({ _id: id }).then((doc) => {
         var data = {
             list: doc
         }
-        console.log(data)
+
         res.render('blog.html', data);
-
-
         return doc;
     }).catch((err) => {
         console.error(err);
     })
-})
+}) */
 
 router.get('/impress', function (req, res) {
     res.render('index.html');
 })
-router.get(/^\/api\/impress/, function (req, res) {
+/* router.get(/^\/api\/impress/, function (req, res) {
     var newUrl = url.parse(req.url, true);
     var page_num = newUrl.query.page_num || 1;
 
@@ -63,14 +60,14 @@ router.get(/^\/api\/impress/, function (req, res) {
             page_num: page_num
         }
 
-        res.send(data);
+        res.json(data);
 
         return docs
     }).catch((err) => {
         console.error(err);
     })
-})
-router.post('/comment', function (req, res) {
+}) */
+/* router.post('/comment', function (req, res) {
     var newDate = new Date();
     var date = newDate.getFullYear() + '-' + (newDate.getMonth() + 1) + '-' + newDate.getDate() + ' '
         + newDate.getHours() + ':' + newDate.getMinutes() + ':' + newDate.getSeconds();
@@ -92,5 +89,5 @@ router.post('/comment', function (req, res) {
     }).catch((err) => {
         console.error(err);
     })
-})
+}) */
 module.exports = router;

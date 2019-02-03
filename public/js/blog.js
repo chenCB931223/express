@@ -25,8 +25,19 @@ $(document).ready(function () {
         $.get('/like', {
             id: $('h1').data('id')
         }, function (result) {
-            console.log(result);
+
             $('#like_number').html(result.like);
+        })
+    })
+
+    $('#remove').on('click', function () {
+
+        alert('删除成功');
+        $.get('/remove', {
+            id: $('h1').data('id')
+        }, function (result) {
+
+
         })
     })
 });

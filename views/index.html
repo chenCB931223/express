@@ -27,10 +27,11 @@
 
     </div>
     <ul class="article" id="article_mail">
+
     </ul>
     <div class="info">
         <a href="javascript:;" class="prev" id="prev">上一页</a>
-        <p id="info_message"></p>
+        <p id="info_message">第{{page_num}}/{{pages}}</p>
         <a href="javascript:;" class="next" id="next">下一页</a>
     </div>
 
@@ -39,20 +40,24 @@
     <script src="/js/index.js"></script>
 
     <script id="test" type="text/html">
-        {{each list  value i}}
+
+
+        {{each list value i}}
         <li>
-            <h2><a href="/acticle/?id={{value._id}}" id="{{value._id}}">{{value.title}}</a></h2>
+            <h2><a href="/acticle/?id={{_id}}" id="{{_id}}">{{title}}</a></h2>
             <div class="article_info">
-                <p>{{value.content}}</p>
+                <p>{{content}}</p>
             </div>
-            <p class="date">{{value.date}}</p>
+            <p class="date">{{date}}</p>
             <div class="comment_like">
-                   <a href="javascript:;" class="like_icon"></a>
-                    <span id="like_number">{{value.like}}</span>
+                <a href="javascript:;" class="like_icon"></a>
+                <span id="like_number">{{like}}</span>
             </div>
-            
+    
         </li>
-        {{/each}}
+
+    {{/each}}
+
     </script>
 </body>
 
