@@ -9,10 +9,10 @@ var user = new schema({
         type: Number,
         default: 0
     },
-    /*  comment: {
-         type: Array,
-         default: []
-     }, */
+    comment: {
+        type: Array,
+        default: []
+    },
 
 }, { versionKey: false })
 

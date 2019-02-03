@@ -11,6 +11,7 @@ $(document).ready(function () {
             id: id,
             text: commentText
         }, function (result) {
+
             var html = `<li>
             <p class="comment_content">${result.text}</p>
             <p class="comment_date">${result.date}</p>
