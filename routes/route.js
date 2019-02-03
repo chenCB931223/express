@@ -5,7 +5,7 @@ var url = require('url');
 var template = require('art-template');
 var router = express.Router();
 
-
+//首页
 router.get('/impress', function (req, res) {
     fs.readFile('./views/index.html', function (err, data) {
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8;' });
@@ -14,6 +14,8 @@ router.get('/impress', function (req, res) {
 
     })
 })
+
+//数据库渲染页面
 router.get(/^\/api\/impress/, function (req, res) {
     let newUrl = url.parse(req.url, true);
     let page_num = newUrl.query.page_num || 1;
@@ -40,6 +42,7 @@ router.get(/^\/api\/impress/, function (req, res) {
     })
 })
 
+//发布的内容存到数据库
 router.post('/api/publish', function (req, res) {
     var title = req.body.title;
     var content = req.body.content;
@@ -62,6 +65,8 @@ router.post('/api/publish', function (req, res) {
         console.error(err);
     })
 })
+
+//渲染内容页面
 router.get(/\/acticle/, function (req, res) {
     var newUrl = url.parse(req.url, true);
     var id = newUrl.query.id;
@@ -74,6 +79,8 @@ router.get(/\/acticle/, function (req, res) {
         console.error(err);
     })
 })
+
+//点赞
 router.get(/\/like/, function (req, res) {
     var newUrl = url.parse(req.url, true);
     var id = newUrl.query.id.replace(/\"/g, '');
@@ -89,6 +96,7 @@ router.get(/\/like/, function (req, res) {
     })
 })
 
+//评论
 router.post('/comment', function (req, res) {
     let id = req.body.id.replace(/\"/g, ''),
         text = req.body.text;
@@ -113,6 +121,7 @@ router.post('/comment', function (req, res) {
 
 })
 
+//删除
 router.get('/remove', function (req, res) {
     let newUrl = url.parse(req.url, true);
     let id = newUrl.query.id.replace(/\"/g, '');
