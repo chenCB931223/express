@@ -2,7 +2,6 @@ var db = require('./db');
 var express = require('express');
 var fs = require('fs');
 var url = require('url');
-var template = require('art-template');
 var router = express.Router();
 
 //首页
@@ -72,8 +71,9 @@ router.get(/\/acticle/, function (req, res) {
     var id = newUrl.query.id;
 
     db.findOne({ _id: id }).then((doc) => {
-        var html = template(__dirname + '/template/blogs', doc);
-        res.send(html);
+        var data = JSON.stringify(doc);
+        var docs = JSON.parse(data);
+        res.render('blog.html', docs);
         return doc;
     }).catch((err) => {
         console.error(err);
